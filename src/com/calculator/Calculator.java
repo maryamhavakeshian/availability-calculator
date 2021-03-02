@@ -12,6 +12,7 @@ public class Calculator {
      * @param availablePercentage percentage of availability
      * @return availability in minute in one year
      */
+   //calculates the availability time in minute per year
     public static BigDecimal availabilityInMinute(BigDecimal availablePercentage) {
         return availablePercentage.multiply(yearInMinute).divide(new BigDecimal(100));
     }
@@ -22,6 +23,7 @@ public class Calculator {
      * @param availablePercentage percentage of availability
      * @return unavailability in minute in one year
      */
+    //calculates the unavailability in minute per year
     public static BigDecimal downTimeInMinute(BigDecimal availablePercentage) {
         return yearInMinute.subtract(availablePercentage.multiply(yearInMinute).divide(new BigDecimal(100)));
     }
@@ -41,6 +43,7 @@ public class Calculator {
      * @param availablePercentage availability percentage in one year
      * @return unavailability percentage in one year
      */
+    //calculates the unavailability percentage
     public static BigDecimal percentageComplement(BigDecimal availablePercentage) {
         return new BigDecimal("100").subtract(availablePercentage);
     }
